@@ -1,4 +1,3 @@
-Here’s a **README.md** file for your project. It provides a clear overview of the project, including installation steps, features, and usage instructions.
 
 ```markdown
 # Movie Recommender System
@@ -145,8 +144,5 @@ This project is licensed under the [MIT License](LICENSE).
    scikit-learn
    faiss-cpu
    ```
-3. If needed, create a license file (`LICENSE`) for your project.
-
-Let me know if you’d like modifications or more details!
 
 
