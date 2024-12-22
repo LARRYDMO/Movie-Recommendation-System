@@ -131,7 +131,7 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 ## Acknowledgments
-- [MovieLens Dataset](https://grouplens.org/datasets/movielens/)
+- [MovieLens Dataset](https://grouplens.org/datasets/movielens/latest/)
 - Libraries: Flask, Faiss, Scikit-learn, Pandas
 ```
 
