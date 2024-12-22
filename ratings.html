@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendations Based on Ratings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('https://cdn.pixabay.com/photo/2017/11/24/10/43/ticket-2974645_1280.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        nav {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+            z-index: 1;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 20px;
+            padding: 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        nav a:hover {
+            color: #ff7f50;
+            transform: scale(1.1);
+        }
+        .form-container {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+            max-width: 500px;
+            margin-top: 100px;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            background-color: #333;
+            color: #fff;
+        }
+        button {
+            background-color: #ff7f50;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff4500;
+            transform: scale(1.1);
+        }
+        #results {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+            text-align: left;
+        }
+        #results li {
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/ratings">Recommendations Based on Ratings</a>
+        <a href="/preferences">Recommendations Based on Preferences</a>
+    </nav>
+
+    <div class="form-container">
+        <h2>Enter Your User ID for Movie Recommendations</h2>
+        <label for="userId">User ID:</label>
+        <input type="text" id="userId" placeholder="Enter your user ID">
+        <button onclick="getRecommendationsByRatings()">Get Recommendations</button>
+        <ul id="results"></ul>
+    </div>
+
+    <script>
+        function getRecommendationsByRatings() {
+            const userId = document.getElementById('userId').value;
+
+            fetch('/recommend-ratings', {  // Fix route here
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    userId: userId
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                displayResults(data);
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        function displayResults(data) {
+            const resultsContainer = document.getElementById('results');
+            resultsContainer.innerHTML = '';
+            if (data.error) {
+                resultsContainer.innerHTML = `<li class="error">${data.error}</li>`;
+                return;
+            }
+
+            data.forEach(movie => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${movie.title} (${movie.genres})`;
+                resultsContainer.appendChild(listItem);
+            });
+        }
+    </script>
+
+</body>
+</html>
