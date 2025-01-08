@@ -1,46 +1,46 @@
 
 ```markdown
-# Movie Recommender System
+Movie Recommender System
 
 A Flask-based web application that provides movie recommendations based on user ratings and preferences. This project leverages content-based filtering (using TF-IDF and Faiss for similarity search) and user input to deliver tailored recommendations.
 
 ---
 
-## Features
+ Features
 
-1. **Content-Based Recommendations**:
+1. Content-Based Recommendations:
    - Recommends similar movies based on genres and features using TF-IDF vectorization and Faiss.
 
-2. **User Ratings-Based Recommendations**:
+2. User Ratings-Based Recommendations:
    - Suggests movies by analyzing user-provided ratings.
 
-3. **Preferences-Based Recommendations**:
+3. Preferences-Based Recommendations:
    - Generates movie suggestions based on user-inputted favorite movies and genres.
 
-4. **Interactive Web Interface**:
+4. Interactive Web Interface:
    - Navigate between different recommendation modes via a user-friendly web interface.
 
 ---
 
-## Tech Stack
+ Tech Stack
 
-- **Backend**: Flask
-- **Machine Learning**: TF-IDF (Scikit-learn), Faiss (Facebook AI Similarity Search)
-- **Frontend**: HTML, CSS, JavaScript
-- **Data**: MovieLens Dataset (movies.csv, ratings.csv)
+- Backend: Flask
+- Machine Learning: TF-IDF (Scikit-learn), Faiss (Facebook AI Similarity Search)
+- Frontend: HTML, CSS, JavaScript
+- Data: MovieLens Dataset (movies.csv, ratings.csv)
 
 ---
 
-## Installation
+ Installation
 
-### Prerequisites
+Prerequisites
 - Python 3.8+
 - Flask
 - Scikit-learn
 - Faiss
 - Pandas
 
-### Steps
+ Steps
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/movie-recommender.git
@@ -66,7 +66,7 @@ A Flask-based web application that provides movie recommendations based on user 
 
 ---
 
-## File Structure
+ File Structure
 
 ```
 movie-recommender/
@@ -91,51 +91,51 @@ movie-recommender/
 
 ## Usage
 
-### Home Page
+ Home Page
 - Visit the home page to explore available recommendation methods.
 
-### Recommendations Based on Ratings
+ Recommendations Based on Ratings
 1. Navigate to `/ratings`.
 2. Enter your **user ID**.
 3. Get movie recommendations based on your past ratings.
 
-### Recommendations Based on Preferences
+ Recommendations Based on Preferences
 1. Navigate to `/preferences`.
 2. Enter your **favorite movies** and/or **favorite genres**.
 3. Get movie suggestions tailored to your preferences.
 
 ---
 
-## Example Outputs
+ Example Outputs
 
-### Ratings-Based Recommendations
+ Ratings-Based Recommendations
 - Input: User ID = `1`
 - Output: Top 10 movie recommendations based on user ratings.
 
-### Preferences-Based Recommendations
+ Preferences-Based Recommendations
 - Input: Favorite Movies = `The Matrix`, Favorite Genres = `Action`
 - Output: Top 10 movies matching the given preferences.
 
 ---
 
-## Future Enhancements
+ Future Enhancements
 1. Integrate hybrid recommendation approaches combining content and collaborative filtering.
 2. Improve user interface for better interactivity.
 3. Add support for multilingual recommendations.
 
 ---
 
-## License
+ License
 This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-## Acknowledgments
+ Acknowledgments
 - [MovieLens Dataset](https://grouplens.org/datasets/movielens/latest/)
 - Libraries: Flask, Faiss, Scikit-learn, Pandas
 ```
 
-### Notes:
+Notes:
 1. Replace `your-username` with your GitHub username in the `git clone` command.
 2. Include a `requirements.txt` file with the required Python packages:
    ```plaintext
