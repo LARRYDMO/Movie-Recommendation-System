@@ -43,8 +43,9 @@ Prerequisites
  Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/movie-recommender.git
-   cd movie-recommender
+   git clone https://github.com/LARRYDMO
+Movie-Recommendation-System
+   cd Movie-Recommendation-System
    ```
 
 2. Install dependencies:
