@@ -136,13 +136,6 @@ This project is licensed under the [MIT License](LICENSE).
 - Libraries: Flask, Faiss, Scikit-learn, Pandas
 ```
 
-Notes:
-1. Replace `your-username` with your GitHub username in the `git clone` command.
-2. Include a `requirements.txt` file with the required Python packages:
-   ```plaintext
-   Flask
-   pandas
-   scikit-learn
    faiss-cpu
    ```
 
